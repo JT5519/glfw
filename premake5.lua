@@ -76,3 +76,10 @@ project "GLFW"
 	filter "configurations:Release"
 		runtime "Release"
 		optimize "on"
+	
+	filter {"system:windows", "configurations:Debug"}
+        buildoptions "/MTd"
+    filter { "system:windows", "configurations:Release"}
+        buildoptions "/MT"
+	filter { "system:windows", "configurations:Dist"}
+        buildoptions "/MT"
